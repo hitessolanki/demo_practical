@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "8b8d4dfa-2706-4fec-87c2-505f81098fa4",
+		"name": "demo_practical",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": " {{uri}}/api/v1/user/signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"abc@gmail.com\",\r\n    \"name\":\"email\",\r\n    \"gender\":\"male\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{uri}}/api/user/generate_token",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"generate_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " {{uri}}/api/v1/user/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"demo@gmail.com\",\r\n    \"password\": \"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{uri}}/api/user/login",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{uri}}/api/user/get_user_list",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRlbW9AZ21haWwuY29tIiwiaWF0IjoxNjQxMTA0NDUzfQ.8Ajp29fqdBXHEZgzHO52LWyHFzXnkAgabVK-9O2m7tw",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page_token\":\"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{uri}}/api/user/get_user_list",
+					"host": [
+						"{{uri}}"
+					],
+					"path": [
+						"api",
+						"user",
+						"get_user_list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
